@@ -278,16 +278,10 @@ public class WebSearchEngine {
 
 		return dp[len1][len2];
 	}
-
-	public static void main(String[] args) {
-
+	
+	public static void Helper(String p1) {
 		WebSearchEngine bfm = new WebSearchEngine();
-
 		Hashtable<String, Integer> occurrenceTable = new Hashtable<String, Integer>();
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter your search: ");
-		String p1 = sc.nextLine();
 		spellChecker spc = new spellChecker();
 		spc.askDict(p1);
 		long _fileNumber = 0;
@@ -312,7 +306,8 @@ public class WebSearchEngine {
 				System.out.println("---------------------------------------------------");
 				System.out.println("Searching in webpages.....");
 				bfm.didYouMean(p1);
-
+				String p2 = getInput();
+				Helper(p2);
 			}
 			sortValue(occurrenceTable, nn);
 		} catch (Exception e) {
@@ -320,6 +315,25 @@ public class WebSearchEngine {
 		} finally {
 
 		}
+	}
+	
+	public static String getInput() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your search: ");
+		String p1 = sc.nextLine();
+		return p1;
+	}
+
+	public static void main(String[] args) {
+
+				
+		System.out.println("****************************** Web Search Engine ******************************");
+		System.out.println("          Submitted by: Vikram Sharma ");
+		System.out.println("                        Kalyan Ram Thandu ");
+		System.out.println("                        Krishna Kalyan Munuganti");
+		
+		String p1 = getInput();
+		Helper(p1);
 
 	}
 
