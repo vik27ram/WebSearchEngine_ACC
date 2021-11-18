@@ -27,7 +27,7 @@ public class PatternMatching {
 		Matcher m3 = r3.matcher(line);
 		long _fileNumber = 0;
 		try {
-			File _directory = new File("src\\ConvertedTextFiles");
+			File _directory = new File("ConvertedTextFiles");
 			File[] _fileArray = _directory.listFiles();
 			for (long i = 0; i < 100; i++) {
 				findData(_fileArray[(int) i], _fileNumber, m3, p1);
